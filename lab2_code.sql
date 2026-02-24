@@ -11,3 +11,9 @@ create index idx_course_id on course(id);
 ALTER TABLE student ADD email VARCHAR(60);
 describe student;
 drop table enrollment;
+SELECT index_name, table_name, status
+FROM user_indexes
+WHERE table_name = 'STUDENT';
+SELECT index_name, table_name, status
+FROM user_indexes
+WHERE table_name = 'COURSE';
