@@ -1,0 +1,11 @@
+create table student_23(roll int primary key not null,student_name varchar(30),phy int, chem int,mat int);
+insert into student_23 values(1,'Rudra',18,17,25);
+insert into student_23 values(2,'Maya',21,20,45);
+insert into student_23 values(3,'Michale',18,7,19);
+insert into student_23 values(4,'Yuri',5,8,12);
+insert into student_23 values(5,'Anne',18,18,44);
+insert into student_23 values(6,'Elizabeth',25,24,48);
+insert into student_23 values(7,'Henry',1,7,2);
+insert into student_23 values(8,'Arjun',12,13,27);
+insert into student_23 values(9,'Ardra',19,22,38);
+insert into student_23 values(10,'Jessy',23,14,50);
