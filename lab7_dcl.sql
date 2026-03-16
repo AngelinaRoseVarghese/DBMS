@@ -1,0 +1,16 @@
+create table student_23(roll int primary key not null,student_name varchar(30),phy int, chem int,mat int,total int,result varchar(3));
+insert into student_23 values(2,'Maya',21,20,45,86,'P');
+insert into student_23 values(3,'Michale',18,7,19,44,'F');
+insert into student_23 values(4,'Yuri',5,8,12,25,'F');
+insert into student_23 values(5,'Anne',18,18,44,80,'P');
+insert into student_23 values(6,'Elizabeth',25,24,48,97,'P');
+insert into student_23 values(7,'Henry',1,7,2,10,'F');
+insert into student_23 values(8,'Arjun',12,13,27,52,'P');
+insert into student_23 values(9,'Ardra',19,22,38,79,'P');
+insert into student_23 values(10,'Jessy',23,14,50,87,'P');
+select * from student_23;
+select * from c24csa24.student_60;
+grant select on student_23 to c24csa24;
+revoke select on student_23 from c24csa24;
+grant all on student_23 to c24csa24;
+revoke all on student_23 from c24csa24;
