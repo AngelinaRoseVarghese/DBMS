@@ -1,0 +1,33 @@
+create table bank_23(bankcode varchar(3) primary key,bankname varchar(50) not null,headoffice varchar(50),branches int check(branches>0));
+insert into bank_23 values('SBI','State Bank of India','Mumbai',22000);
+insert into bank_23 values('HDF','HDFC Bank','Mumbai',6000);
+insert into bank_23 values('ICI','ICICI Bank','Mumbai',5000);
+insert into bank_23 values('PNB','Punjab National Bank','New Delhi',10000);
+insert into bank_23 values('CAN','Canara Bank','Banglore',9000);
+insert into bank_23 values('FDL','Federal Bank','Thiruvananthapuram',15000);
+insert into bank_23 values('AXS','Axis Bank','Ernakulam',10000);
+insert into bank_23 values('ESF','ESAF Bank','Ernakulam',15000);
+
+create table branch(branchid int primary key, branchname varchar(50) Default 'New Delhi',bankid varchar(3),foreign key (bankid) references bank_23(bankcode));
+insert into branch values(1,'Kochi','SBI');
+insert into branch values(2,'Ernakulam','HDF');
+insert into branch values(3,'Chennai','ICI');
+insert into branch values(4,'Delhi','PNB');
+insert into branch values(5,'Bangalore','CAN');
+insert into branch values(6,'Kottayam','FDL');
+insert into branch values(7,'Kochi','HDF');
+insert into branch values(8,'Ernakulam','FDL');
+insert into branch values(9,'Kottayam','SBI');
+
+select * from bank_23;
+select * from branch;
+create view bank_head_office as select * from bank_23 where headoffice='Ernakulam';
+select * from bank_head_office;
+create view bank_branch as select B.* from bank_23 B join branch br on B.bankcode=BR.bankid where BR.branchname='Kottayam';
+select * from bank_branch;
+create view banks_more_than_50 as select * from bank_23 where branches>50;
+select * from banks_more_than_50;
+create view bank_branch_details as select B.bankname, BR.Branchname from bank_23 B join branch BR on B.bankcode=BR.bankid;
+select * from bank_branch_details;
+CREATE VIEW banks_outside_ernakulam AS SELECT * FROM bank_23 WHERE headoffice <> 'Ernakulam';
+select * from banks_outside_ernakulam;
